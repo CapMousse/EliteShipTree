@@ -110,8 +110,8 @@ h1, h2, h3 {
     content: ' ';
     position: absolute;
     display: block;
-    width: 110%;
-    left: -62.5%;
+    width: 100%;
+    left: -50%;
     top: 50%;
     border-top: 1px solid #FF7000;
     z-index: 0;
@@ -129,7 +129,7 @@ h1, h2, h3 {
 
 .row .title {
     display: table-cell;
-    min-width: 205px;
+    min-width: 164px;
     position: relative;
 }
 
@@ -179,6 +179,21 @@ h1, h2, h3 {
     right: 0;
 }
 
+#sidebar .close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 1em;
+    color: white;
+}
+
+#sidebar .close i {
+    display: block;
+    font-size: 2em;
+    cursor: pointer;
+}
+
 #sidebar .image {
     height: 300px;
     width: 100%;
@@ -196,8 +211,8 @@ h1, h2, h3 {
 
 #sidebar .image .title {
     position: absolute;
-    left: 2em;
-    bottom: 2em;
+    left: 1em;
+    bottom: 1em;
 }
 
 #sidebar .content .column {
@@ -210,6 +225,7 @@ h1, h2, h3 {
     background: rgba(0, 0, 0, .5);
     display: inline-block;
     padding: .3em;
+    margin: 0
 }
 
 #sidebar .image h1 {
@@ -285,6 +301,7 @@ body.open {
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
 }
+
 @media screen and (min-width: 768px) { 
     ::-webkit-scrollbar {
         width:  17px;
@@ -310,10 +327,14 @@ body.open {
         width: 100%;
     }
 
-    body.open .main {
-        display: none;
+    body .main {
+        padding-bottom: 41px;
         overflow: scroll;
         -webkit-overflow-scrolling: touch;
+    }
+
+    body.open .main {
+        display: none;
     }
 
     #sidebar {

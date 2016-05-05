@@ -105,7 +105,7 @@ Ship.prototype.getStandard = function () {
         class: this.slots.standard[4],
         module: powerDistributor,
         infos: "WEP: " + powerDistributor.weaponcapacity + "<small>MJ</small> / " + powerDistributor.weaponrecharge + " <small>MW</small>"
-            + " SYS: " + powerDistributor.systemcapacity + "<small>MJ</small> / " + powerDistributor.systemrecharge + " <small>MW</small>"
+            + "<br>SYS: " + powerDistributor.systemcapacity + "<small>MJ</small> / " + powerDistributor.systemrecharge + " <small>MW</small>"
             + "<br>ENG: " + powerDistributor.enginecapacity + "<small>MJ</small> / " + powerDistributor.enginerecharge + " <small>MW</small>",
     },{
         class: this.slots.standard[5],

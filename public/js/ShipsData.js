@@ -65,6 +65,10 @@
         this.sidebar.addEventListener("click", function (event) {
             event.stopImmediatePropagation();
             event.stopPropagation();
+
+            if (event.target.classList.contains('fa-times-circle')) {
+                document.body.className = "";
+            }
         }, true);
 
         document.body.addEventListener("click", function () {
