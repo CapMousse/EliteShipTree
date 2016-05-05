@@ -6,6 +6,10 @@
         this.ships = document.querySelectorAll(".ship");
         this.sidebar = document.querySelector("#sidebar");
         this.cache = {};
+        this.loading = document.createElement("div");
+
+        this.loading.innerText = "LOADING";
+        this.loading.className = "loading";
 
         this.initEvents();
     }
@@ -81,7 +85,13 @@
             this.sidebar.removeChild(this.sidebar.firstChild);
         }
 
+        this.sidebar.appendChild(this.loading);
+
         this.ajax("get", "/ship/"+id, function (ship){
+
+            while (this.sidebar.firstChild) {
+                this.sidebar.removeChild(this.sidebar.firstChild);
+            }
 
             this.sidebar.innerHTML = ship;
             document.body.className = "open"

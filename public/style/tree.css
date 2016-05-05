@@ -232,14 +232,17 @@ h1, h2, h3 {
 
 #sidebar table tr td + td {
     color: rgba(255, 255, 255, .7);
+    width: 50%;
 }
 
 #sidebar .slot {
     width: 100%;
     display: table;
-    height: 2em;
+    min-height: 2.5em;
+    line-height: 1em;
     border: 1px solid #FF7000;
     border-bottom: 0;
+    font-size: .9em;
 }
 
 #sidebar .slot:last-child {
@@ -265,12 +268,22 @@ h1, h2, h3 {
 
 #sidebar .slot .mass {
     position: absolute;
-    top: 0;
+    top: 50%;
     right: .5em;
+    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
 }
 
 body.open {
     width: 50%;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
 }
 @media screen and (min-width: 768px) { 
     ::-webkit-scrollbar {

@@ -101,6 +101,11 @@
                         else
                             = i.module.moduleName
 
+                        if !!i.module.infos
+                            br
+                            small!=i.module.infos
+
+
                         .mass
                             = (i.module.mass || i.module.cargo || i.module.fuel) + "T"
                     else

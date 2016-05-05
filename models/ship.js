@@ -123,7 +123,7 @@ Ship.prototype.getInternals = function () {
         modules,
         find;
 
-    for (var i = this.slots.internal.length - 1; i--;) {
+    for (var i = this.slots.internal.length; i--;) {
         if (this.defaults.internal[i] !== 0) {
             for (var j in internalList) {
                 modules = new Modules("internal", j);

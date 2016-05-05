@@ -104,7 +104,25 @@ Modules.prototype.getName = function (index) {
     }
 
     this[index].moduleName = names[this.name];
+    this.getInfos(index);
+
     return this[index];
+}
+
+Modules.prototype.getInfos = function (index) {
+    var infos = {
+        sc:     {Range: ["rangeLS", "LS"]},
+        sg:     {Optimal: ["optmass", "T"], Max: ["maxmass", "T"]},
+    }
+
+    if (!infos[this.name]) return;
+
+    this[index].infos = "";
+
+    for (var i in infos[this.name]) {
+        if (!infos[this.name][i]) continue;
+        this[index].infos += i + ": " + this[index][infos[this.name][i][0]] + "" + infos[this.name][i][1] + " ";
+    }
 }
 
 module.exports = Modules;
