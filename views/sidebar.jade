@@ -1,0 +1,109 @@
+.image(style="background-image: url(/images/"+basename+".jpg)")
+    .title
+        h1=ship.properties.name
+        br
+        h2=ship.properties.manufacturer
+
+.content
+    .column
+        h2
+            i.fa.fa-space-shuttle
+            |  General
+
+        table
+            tr
+                td Cost
+                td=ship.retailCost + " CR"
+            tr
+                td Insurance
+                td=ship.insurance + " CR"
+
+            if ship.hardpoints.huge
+                tr
+                    td Huge hardpoints
+                    td=ship.hardpoints.huge
+                
+            if ship.hardpoints.large
+                tr
+                    td Large hardpoints
+                    td=ship.hardpoints.large
+                
+            if ship.hardpoints.medium
+                tr
+                    td Medium hardpoints
+                    td=ship.hardpoints.medium
+                
+            if ship.hardpoints.small
+                tr
+                    td Small hardpoints
+                    td=ship.hardpoints.small
+                
+            tr
+                td Utility mounts
+                td=ship.hardpoints.utility
+    .column
+        h2 
+            i.fa.fa-wrench
+            |  Specs
+
+        table
+            tr
+                td Top speed
+                td=ship.properties.speed + " M/S"
+            tr
+                td Boost speed
+                td=ship.properties.boost + " M/S"
+            tr
+                td Manoeuvrability
+                td=ship.properties.agility + "/10"
+            tr
+                td Shields
+                td=ship.properties.baseShieldStrength + " MJ"
+            tr
+                td Armour
+                td=ship.properties.baseArmour
+            tr
+                td Hull mass
+                td=ship.properties.hullMass + " T"
+            tr
+                td Cargo
+                td=ship.properties.cargo + " T"
+            tr
+                td Fuel
+                td=ship.properties.fuel + " T"
+
+    .column
+        h2 Standard
+
+        each i in ship.standard
+            .slot
+                .class=i.class
+                .module
+                    =i.module.class + i.module.rating + " " + i.module.moduleName
+                    if !!i.infos
+                        br
+                        small!=i.infos
+
+                    .mass
+                        =(i.module.mass || i.module.fuel) + "T"
+
+    .column
+        h2 Internal compartments
+
+        each i in ship.internals
+            .slot
+                .class=i.class + " "
+                .module
+                    if i.module
+                        =i.module.class + i.module.rating + " "
+                        if i.module.name
+                            = i.module.name
+                        else
+                            = i.module.moduleName
+
+                        .mass
+                            = (i.module.mass || i.module.cargo || i.module.fuel) + "T"
+                    else
+                        .empty
+                        | empty
+        

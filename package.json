@@ -1,0 +1,17 @@
+{
+  "name": "Elite-ship-list",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "capitaine.mousse@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "coriolis-data": "git+https://github.com/cmmcleod/coriolis-data.git",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "node-cache": "^3.1.0",
+    "request": "^2.69.0"
+  }
+}

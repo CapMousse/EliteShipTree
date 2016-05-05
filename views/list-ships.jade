@@ -1,0 +1,33 @@
+html
+    head
+        link(href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700', rel='stylesheet', type='text/css')
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css")
+        link(rel="stylesheet", href="/style/tree.css")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+
+    body
+        include ship.jade
+
+        header 
+            a(href="/")
+                img(src="/images/elite-dangerous-logo.svg" alt="Elite Ship")
+                | Elite ship tree
+
+        .main
+            section.row
+                .column
+                    +ship("sidewinder", ships.sidewinder)
+
+            each group, group_name in ships.tree
+                section.row
+                    .title
+                        h2=group_name
+                    each type in group
+                        .column
+                            each ship_infos, ship_name in type
+                                +ship(ship_name, ship_infos)
+
+        #sidebar
+
+
+        script(src="/js/ShipsData.js")

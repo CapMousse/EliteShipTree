@@ -1,0 +1,8 @@
+mixin ship(name, infos)
+    article.ship(data-id=name)
+        .image(style="background-image: url(/images/"+name+".jpg)")
+        .infos
+            h3=infos.properties.name
+            span
+                =infos.retailCost
+                |  CR

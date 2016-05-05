@@ -1,0 +1,323 @@
+
+body, html {
+    margin: 0;
+    background: #212121;
+    background-image: url("/images/grid.png"), url("/images/background.jpg");
+    font-family: 'Source Code Pro', Arial;
+    font-size: 1em;
+    color: #FF7000;
+    width: 100%;
+    height: 100%;
+    transition: all .2s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    height: 81px;
+    line-height: 81px;
+    background: rgba(0, 0, 0, .4);
+    padding: 0 2em;
+    position: fixed;
+    top: 0;
+    right: 17px;
+    z-index: 2;
+    width: 100%;
+    vertical-align: middle;
+}
+
+header a {
+    line-height: 80px;
+    color: #FF7000;
+    text-decoration: none;
+}
+
+header img {
+    height: 60px;
+    width: auto;
+    vertical-align: middle;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1em;
+}
+
+h3 {
+    font-size: .8em;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.main {
+    height: 100%;
+    padding: 122px 40px 300px 40px;
+    overflow: auto;
+}
+
+.row {
+    display: table;
+    flex-direction: row;
+    position: relative;
+}
+
+.column { 
+    display: table-cell;
+    flex-direction: column;
+    position: relative;
+}
+
+
+.ship {
+    cursor: pointer;
+    position: relative;
+    margin-right: 42px;
+    margin-bottom: 42px;
+    min-width: 100px;
+    max-width: 163px;
+}
+
+.ship > .image {
+    height: 82px;
+    width: 163px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.ship > * {
+    position: relative;
+    z-index: 1;
+}
+
+.ship > .infos {
+    background: #222;
+    height: 40px;
+    padding: 3px;
+}
+
+.infos > span { 
+    font-size: .8em;
+}
+
+.row:not(:first-child) > .column > .ship:first-child:after {
+    content: ' ';
+    position: absolute;
+    display: block;
+    width: 110%;
+    left: -62.5%;
+    top: 50%;
+    border-top: 1px solid #FF7000;
+    z-index: 0;
+}
+
+.ship + .ship:before {
+    content: ' ';
+    position: absolute;
+    display: block;
+    height: 100%;
+    left: 50%;
+    top: -50%;
+    border-left: 1px solid #FF7000;
+}
+
+.row .title {
+    display: table-cell;
+    min-width: 205px;
+    position: relative;
+}
+
+.row .title:before {
+    content: ' ';
+    position: absolute;
+    display: block;
+    height: 130%;
+    left: 50%;
+    top: -20%;
+    border-left: 1px solid #FF7000;
+}
+
+.row .title h2 {
+    top: -41px;
+    left: 100%;
+    position: absolute;
+    color: white;
+}
+
+.main > .row {
+    margin-bottom: 41px;
+}
+
+.main > .row:last-child .title:before {
+    height: 58%;
+}
+
+.main > .row:not(:first-child) > .column:first-child > .ship:first-child:after {
+    width: 200%;
+    left: 0;
+}
+
+#sidebar {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: -50%;
+    width: 50%;
+    background: #111;
+    z-index: 3;
+    overflow: auto;
+    transition: all .2s;
+}
+
+.open #sidebar {
+    right: 0;
+}
+
+#sidebar .image {
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+#sidebar .content {
+    width: 100%;
+    padding: 2em 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#sidebar .image .title {
+    position: absolute;
+    left: 2em;
+    bottom: 2em;
+}
+
+#sidebar .content .column {
+    width: 46%;
+    margin: 0 2% 2% 2%;
+    min-width: 200px;
+}
+
+#sidebar .image h1, #sidebar .image h2 {
+    background: rgba(0, 0, 0, .5);
+    display: inline-block;
+    padding: .3em;
+}
+
+#sidebar .image h1 {
+    font-size: 1.2em;
+}
+
+#sidebar h2 {
+    font-size: 1em;
+    font-weight: normal;
+    color: white;
+    margin-bottom: 1em;
+    background: rgba(255, 80, 0, .2);
+    padding: .2em;
+}
+
+#sidebar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#sidebar table tr td + td {
+    color: rgba(255, 255, 255, .7);
+}
+
+#sidebar .slot {
+    width: 100%;
+    display: table;
+    height: 2em;
+    border: 1px solid #FF7000;
+    border-bottom: 0;
+}
+
+#sidebar .slot:last-child {
+    border-bottom: 1px solid #FF7000;
+}
+
+#sidebar .slot > * {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+#sidebar .slot .class {
+    width: 20px;
+    text-align: center;
+    border-right: 1px solid #FF7000;
+}
+
+#sidebar .slot .module {
+    padding: 0 .5em;
+    position: relative;
+    color: rgba(255, 255, 255, .7);
+}
+
+#sidebar .slot .mass {
+    position: absolute;
+    top: 0;
+    right: .5em;
+}
+
+body.open {
+    width: 50%;
+}
+@media screen and (min-width: 768px) { 
+    ::-webkit-scrollbar {
+        width:  17px;
+        height: 17px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, .2);
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, .1);
+    }
+
+    body {
+        scrollbar-face-color: rgba(255, 255, 255, .2);
+        scrollbar-track-color: rgba(255, 255, 255, .1)y;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body.open {
+        width: 100%;
+    }
+
+    body.open .main {
+        display: none;
+    }
+
+    #sidebar {
+        transition: none;
+    }
+
+    .open #sidebar {
+        width: 100%;
+        top: 81px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    #sidebar .content .column {
+        width: 100%;
+        margin: 0 0 1em;
+        padding: 1em;
+    }
+}
