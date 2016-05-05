@@ -86,6 +86,7 @@
         }
 
         this.sidebar.appendChild(this.loading);
+        document.body.className = "open";
 
         this.ajax("get", "/ship/"+id, function (ship){
 
@@ -94,7 +95,6 @@
             }
 
             this.sidebar.innerHTML = ship;
-            document.body.className = "open"
         });
     }
 
