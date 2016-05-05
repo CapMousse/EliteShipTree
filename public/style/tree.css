@@ -312,10 +312,14 @@ body.open {
 
     body.open .main {
         display: none;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
     }
 
     #sidebar {
         transition: none;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
     }
 
     .open #sidebar {
