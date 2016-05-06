@@ -381,6 +381,9 @@ body.open {
     -webkit-transform: translate(-50%, -50%);
 }
 
+/* Github Corner */
+.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
+
 @media screen and (min-width: 768px) { 
     ::-webkit-scrollbar {
         width:  17px;
@@ -451,6 +454,10 @@ body.open {
         left: 0;
         right: 0;
         bottom: 0;
+    }
+
+    .github-corner {
+        display: none;
     }
 }
 
