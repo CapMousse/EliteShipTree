@@ -273,6 +273,10 @@ h1, h2, h3 {
     border-collapse: collapse;
 }
 
+#sidebar table tr td:first-child {
+    font-size: .9em;
+}
+
 #sidebar table tr td + td {
     color: rgba(255, 255, 255, .7);
     width: 50%;
