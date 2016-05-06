@@ -26,6 +26,11 @@ var Ship = function (shipName) {
     return this;
 }
 
+/**
+ * Format ship price
+ * @param  {String|Int} price
+ * @return {String}
+ */
 Ship.prototype.formatPrice = function (price) {
     price = price.toFixed(0);
     
@@ -34,6 +39,9 @@ Ship.prototype.formatPrice = function (price) {
     });
 }
 
+/**
+ * Compute ship cargo size
+ */
 Ship.prototype.computeCargo = function () {
     var internal = this.defaults.internal,
         modules = new Modules("internal", "cr"),
@@ -48,7 +56,10 @@ Ship.prototype.computeCargo = function () {
     this.properties.cargo = totalCargo;
 }
 
-Ship.prototype.computeFuel = function (ship) {
+/**
+ * Compute ship fuel size
+ */
+Ship.prototype.computeFuel = function () {
     var fuel = this.defaults.standard[this.defaults.standard.length - 1],
         modules = new Modules("standard", "ft"),
         totalFuel = 0,
@@ -60,6 +71,9 @@ Ship.prototype.computeFuel = function (ship) {
     this.properties.fuel = totalFuel;
 }
 
+/**
+ * Count hardpoints
+ */
 Ship.prototype.countHardpoints = function () {
     var count = {};
 
@@ -76,6 +90,9 @@ Ship.prototype.countHardpoints = function () {
     };
 }
 
+/**
+ * Get standard module list
+ */
 Ship.prototype.getStandard = function () {
     var powerPlants         = (new Modules("standard", "pp")).findClass(this.defaults.standard[0]),
         fsd                 = (new Modules("standard", "fsd")).findClass(this.defaults.standard[2]),
@@ -117,6 +134,9 @@ Ship.prototype.getStandard = function () {
     }];
 }
 
+/**
+ * Get internal list
+ */
 Ship.prototype.getInternals = function () {
     var internals = [],
         internal,
