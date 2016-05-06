@@ -1,9 +1,35 @@
+@font-face {
+    font-family:'Eurostile';
+    src: url('/fonts/EurostileLTStd_gdi.eot');
+    src: url('/fonts/EurostileLTStd_gdi.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/EurostileLTStd_gdi.woff') format('woff'),
+        url('/fonts/EurostileLTStd_gdi.ttf') format('truetype'),
+        url('/fonts/EurostileLTStd_gdi.svg#EurostileLTStd') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-25CA;
+}
+
+@font-face {
+    font-family:'Eurostile';
+    src: url('/fonts/EurostileLTStd-Bold_gdi.eot');
+    src: url('/fonts/EurostileLTStd-Bold_gdi.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/EurostileLTStd-Bold_gdi.woff') format('woff'),
+        url('/fonts/EurostileLTStd-Bold_gdi.ttf') format('truetype'),
+        url('/fonts/EurostileLTStd-Bold_gdi.svg#EurostileLTStd-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-25CA;
+}
+
 
 body, html {
     margin: 0;
     background: #212121;
     background-image: url("/images/grid.png"), url("/images/background.jpg");
-    font-family: 'Source Code Pro', Arial;
+    font-family: "Eurostile", Arial, sans-serif;
     font-size: 1em;
     color: #FF7000;
     width: 100%;
@@ -54,6 +80,7 @@ h3 {
 
 h1, h2, h3 {
     margin: 0;
+    font-family: "Eurostile", Arial, sans-serif;
 }
 
 .main {
@@ -113,7 +140,7 @@ h1, h2, h3 {
     width: 100%;
     left: -50%;
     top: 50%;
-    border-top: 1px solid #FF7000;
+    border-top: 2px solid #FF7000;
     z-index: 0;
 }
 
@@ -124,7 +151,7 @@ h1, h2, h3 {
     height: 100%;
     left: 50%;
     top: -50%;
-    border-left: 1px solid #FF7000;
+    border-left: 2px solid #FF7000;
 }
 
 .row .title {
@@ -140,7 +167,7 @@ h1, h2, h3 {
     height: 130%;
     left: 50%;
     top: -20%;
-    border-left: 1px solid #FF7000;
+    border-left: 2px solid #FF7000;
 }
 
 .row .title h2 {
