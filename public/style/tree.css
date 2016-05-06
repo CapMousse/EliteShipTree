@@ -66,6 +66,38 @@ header img {
     vertical-align: middle;
 }
 
+header .search {
+    width: 200px;
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    margin-left: 100px;
+}
+
+header .search .fa {
+    position: absolute;
+}
+
+header .search .fa-search {
+    left: 5px;
+    top: 50%;
+    transform: translate(0, -50%); 
+}
+
+header .search input {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    height: 2em;
+    padding-left: 2em;
+    position: relative;
+    z-index: 1;
+    border: 1px solid #FF7000;
+    margin: 0;
+    color: white;
+}
+
 h1 {
     font-size: 2em;
 }
@@ -85,7 +117,7 @@ h1, h2, h3 {
 
 .main {
     height: 100%;
-    padding: 122px 40px 300px 40px;
+    padding: 122px 40px 40px 40px;
     overflow: auto;
 }
 
@@ -152,6 +184,22 @@ h1, h2, h3 {
     left: 50%;
     top: -50%;
     border-left: 2px solid #FF7000;
+}
+
+.ship.toggle {
+    cursor: initial;
+}
+
+.ship.toggle .infos:after {
+    position: absolute;
+    top: -82;
+    right: 0;
+    left: 0;
+    height: 122px;
+    background: rgba(0, 0, 0, .8);
+    display: block;
+    content: " ";
+    z-index: 1;
 }
 
 .row .title {
@@ -354,12 +402,35 @@ body.open {
 }
 
 @media screen and (max-width: 768px) {
+    header {
+        height: 40px;
+        line-height: 40px;
+        right: 0;
+        padding: 0 1em;
+    }
+
+    header a {
+        line-height: 40px;
+        font-size: .8em;
+    }
+
+    header img {
+        height: 30px;
+    }
+
+    header .search {
+        position: absolute;
+        right: 1em;
+        top: 50%;
+        transform: translate(0, -13px);
+        width: 150px;
+    }
+
     body.open {
         width: 100%;
     }
 
     body .main {
-        padding-bottom: 41px;
         overflow: scroll;
         -webkit-overflow-scrolling: touch;
     }

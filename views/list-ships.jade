@@ -10,8 +10,13 @@ html
 
         header 
             a(href="/")
-                img(src="/images/elite-dangerous-logo.svg" alt="Elite Ship")
-                | Elite ship tree
+                img(src="/images/elite-dangerous-logo.svg", alt="Elite Ship")
+                span
+                    | Elite ship tree
+
+            .search
+                i.fa.fa-search
+                input(name="search", placeholder="Search")
 
         .main
             section.row

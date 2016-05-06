@@ -4,9 +4,13 @@
      */
     ShipsData = function () {
         this.ships = document.querySelectorAll(".ship");
+        this.header = document.querySelector("header");
+        this.main = document.querySelector(".main");
         this.sidebar = document.querySelector("#sidebar");
-        this.cache = {};
         this.loading = document.createElement("div");
+        this.input = document.querySelector("input");
+        this.ships = document.querySelectorAll(".ship");
+        this.cache = {};
 
         this.loading.innerText = "LOADING";
         this.loading.className = "loading";
@@ -28,7 +32,7 @@
 
         error = error || function(){};
 
-        if (self.cache[url] && false) {
+        if (self.cache[url]) {
             callback.call(self, this.cache[url]);
             return;
         }
@@ -71,6 +75,10 @@
             }
         }, true);
 
+        this.input.addEventListener("keyup", function () {
+            self.search.apply(self, arguments);
+        }, true);
+
         document.body.addEventListener("click", function () {
             document.body.className = "";
         })
@@ -100,6 +108,27 @@
 
             this.sidebar.innerHTML = ship;
         });
+    }
+
+    ShipsData.prototype.search = function (event) {
+        var ship, first;
+
+        for (var i in this.ships) {
+            if (!this.ships.hasOwnProperty(i)) continue;
+            ship = this.ships[i];
+
+            if (ship.dataset.name.toLowerCase().search(this.input.value.toLowerCase()) !== -1) {
+                if (!first) first = ship;
+                ship.classList.remove("toggle");
+            } else {
+                ship.classList.add("toggle");
+            }
+        }
+
+        if (first && this.input.value != "") {
+            this.main.scrollTop = first.offsetParent.offsetParent.offsetTop + first.offsetTop - this.header.offsetHeight - 40;
+            this.main.scrollLeft = first.offsetParent.offsetLeft - 40;
+        }
     }
 
     new ShipsData();
