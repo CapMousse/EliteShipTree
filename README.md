@@ -13,8 +13,8 @@ npm start
 
 ## Contributors
 
-[Jeremy Barbe](https://github.com/CapMousse) ([@capitainemousse](https://twitter.com/capitainemousse))
-[Maxime Fabre](https://github.com/anahkiasen) ([@anahkiasen](https://twitter.com/anahkiasen))
+- [Jeremy Barbe](https://github.com/CapMousse) ([@capitainemousse](https://twitter.com/capitainemousse)) 
+- [Maxime Fabre](https://github.com/anahkiasen) ([@anahkiasen](https://twitter.com/anahkiasen))
 
 ## License
 
