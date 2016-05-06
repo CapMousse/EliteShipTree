@@ -155,6 +155,15 @@ h1, h2, h3 {
     z-index: 1;
 }
 
+.ship > i {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 2;
+    color: white;
+    font-size: .8em;
+}
+
 .ship > .infos {
     background: #222;
     height: 40px;
@@ -434,6 +443,7 @@ body.open {
     }
 
     body .main {
+        padding-top: 81px;
         overflow: scroll;
         -webkit-overflow-scrolling: touch;
     }
@@ -450,7 +460,7 @@ body.open {
 
     .open #sidebar {
         width: 100%;
-        top: 81px;
+        top: 40px;
         left: 0;
         right: 0;
         bottom: 0;

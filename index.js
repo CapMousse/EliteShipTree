@@ -26,7 +26,7 @@ var cache   = new NodeCache({stdTTL: 86400, checkperiod: 86400}),
             ["python"],
             ["anaconda"]
         ],
-        "Frighter": [
+        "Freighter": [
             ["hauler"],
             ["type_6_transporter", "keelback"],
             ["type_7_transport"],
