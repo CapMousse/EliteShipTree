@@ -7,6 +7,11 @@
         br
         h2=ship.properties.manufacturer
 
+    .links
+        a(href="https://coriolis.io/outfit/"+basename) 
+            img(src="/images/coriolis.svg")
+            | Coriolis
+
 .content
     .column
         h2
@@ -76,7 +81,9 @@
                 td=ship.properties.fuel + " T"
 
     .column
-        h2 Standard
+        h2 
+            i.fa.fa-cog
+            |  Standard
 
         each i in ship.standard
             .slot
@@ -91,7 +98,9 @@
                         =(i.module.mass || i.module.fuel) + "T"
 
     .column
-        h2 Internal compartments
+        h2 
+            i.fa.fa-circle-o-notch
+            |  Internal compartments
 
         each i in ship.internals
             .slot

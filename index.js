@@ -33,6 +33,13 @@ var cache   = new NodeCache({stdTTL: 86400, checkperiod: 86400}),
             ["type_9_heavy"],
             ["imperial_cutter"]
         ],
+        "Explorer": [
+            ["hauler"],
+            ["cobra_mk_iii"],
+            ["diamondback", "asp_scout"],
+            ["diamondback_explorer", "asp"],
+            ["anaconda"]
+        ],
         "Passenger": [
             ["orca"]
         ]
