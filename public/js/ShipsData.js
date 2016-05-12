@@ -16,6 +16,7 @@
         this.loading.className = "loading";
 
         this.initEvents();
+        this.initPage();
     }
 
     /**
@@ -71,6 +72,7 @@
             event.stopPropagation();
 
             if (event.target.classList.contains('fa-times-circle')) {
+                history.pushState(null, null, "/");
                 document.body.className = "";
             }
         }, true);
@@ -80,12 +82,33 @@
         }, true);
 
         document.body.addEventListener("click", function () {
+            history.pushState(null, null, "/");
             document.body.className = "";
         })
+
+        window.addEventListener("popstate", function (){
+            self.onPopstate.apply(self, arguments);
+        });
+    };
+
+    /**
+     * Init default state
+     */
+    ShipsData.prototype.initPage = function () {
+        if (!this.sidebar.firstChild) return;
+
+        var id      = document.querySelector("#sidebar .title").dataset.title,
+            state   = {
+                id: id,
+                ship: this.sidebar.innerHTML
+            };
+
+        history.replaceState(state, id, location.pathname);
     };
 
     /**
      * handle click events
+     * @param  {Event} event
      */
     ShipsData.prototype.handleClick = function (event) {
         var id = event.currentTarget.dataset.id;
@@ -101,6 +124,7 @@
         document.body.className = "open";
 
         this.ajax("get", "/ship/"+id, function (ship){
+            history.pushState({id: id, ship: ship }, id, "/ship/"+id);
 
             while (this.sidebar.firstChild) {
                 this.sidebar.removeChild(this.sidebar.firstChild);
@@ -110,6 +134,10 @@
         });
     }
 
+    /**
+     * On search
+     * @param  {Event} event
+     */
     ShipsData.prototype.search = function (event) {
         var ship, first;
 
@@ -129,6 +157,22 @@
             this.main.scrollTop = first.offsetParent.offsetParent.offsetTop + first.offsetTop - this.header.offsetHeight - 40;
             this.main.scrollLeft = first.offsetParent.offsetLeft - 40;
         }
+    }
+
+    /**
+     * On history PopState
+     * @param  {PopStateEvent} popstate
+     */
+    ShipsData.prototype.onPopstate = function (popstate){
+        document.body.className = popstate.state == null ? "" : "open";
+
+        if (popstate.state == null) return;
+
+        while (this.sidebar.firstChild) {
+            this.sidebar.removeChild(this.sidebar.firstChild);
+        }
+
+        this.sidebar.innerHTML = popstate.state.ship;
     }
 
     new ShipsData();

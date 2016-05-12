@@ -51,16 +51,16 @@ Number.prototype.pad = function(size) {
     return s;
 }
 
-app.set('views', './views');
-app.set('view engine', 'jade');
-app.use(express.static('public'));
-
-app.get('/', function (request, response){
+/**
+ * Sort ships
+ * @return {Object}
+ */
+function sortShips () {
     var sidewinder = new Ship("sidewinder"),
         sorted = {
-        sidewinder: sidewinder,
-        tree: {}
-    };
+            sidewinder: sidewinder,
+            tree: {}
+        };
 
     for (var i in sorting) {
         if (!sorted.tree[i]) sorted.tree[i] = [];
@@ -74,8 +74,17 @@ app.get('/', function (request, response){
         }
     };
 
+    return sorted;
+}
+
+app.set('views', './views');
+app.set('view engine', 'jade');
+app.use(express.static('public'));
+
+app.get('/', function (request, response){
+
     response.render('list-ships', {
-        ships: sorted
+        ships: sortShips()
     });
 });
 
@@ -88,10 +97,19 @@ app.get('/ship/:name', function (request, response){
         return;
     }
 
-    response.render('sidebar', {
-        basename:   request.params.name,
-        ship:       ship
-    });
+    if (request.xhr) {
+        response.render('sidebar', {
+            basename:   request.params.name,
+            ship:       ship
+        });
+    } else {
+        response.render('list-ships', {
+            ships:      sortShips(),
+            basename:   request.params.name,
+            sidebar:    ship
+        });
+    }
+
 });
 
 app.listen(process.env.PORT || 3000, function () {
