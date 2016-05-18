@@ -7,43 +7,7 @@ var express     = require('express'),
     app         = express();
 
 var cache   = new NodeCache({stdTTL: 86400, checkperiod: 86400}),
-    sorting = {
-        "Combat": [
-            ["eagle", "imperial_eagle"],
-            ["viper", "viper_mk_iv"],
-            ["imperial_courier"],
-            ["vulture"],
-            ["federal_dropship", "federal_assault_ship", "federal_gunship"],
-            ["fer_de_lance"],
-            ["federal_corvette"]
-        ],
-        "Multipurpose": [
-            ["adder"],
-            ["cobra_mk_iii", "cobra_mk_iv"],
-            ["diamondback", "diamondback_explorer"],
-            ["asp_scout", "asp"],
-            ["imperial_clipper"],
-            ["python"],
-            ["anaconda"]
-        ],
-        "Freighter": [
-            ["hauler"],
-            ["type_6_transporter", "keelback"],
-            ["type_7_transport"],
-            ["type_9_heavy"],
-            ["imperial_cutter"]
-        ],
-        "Explorer": [
-            ["hauler"],
-            ["cobra_mk_iii"],
-            ["diamondback", "asp_scout"],
-            ["diamondback_explorer", "asp"],
-            ["anaconda"]
-        ],
-        "Passenger": [
-            ["orca"]
-        ]
-    };
+    sorting = require("./data");
 
 Number.prototype.pad = function(size) {
     var s = String(this);
