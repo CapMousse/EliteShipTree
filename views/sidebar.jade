@@ -25,6 +25,15 @@
             tr
                 td Insurance
                 td=ship.insurance + " CR"
+            tr
+                td Pad size
+                td
+                    if (ship.properties.class == 1)
+                        | Small
+                    if (ship.properties.class == 2)
+                        | Medium
+                    if (ship.properties.class == 3)
+                        | Large
 
             if ship.hardpoints.huge
                 tr
