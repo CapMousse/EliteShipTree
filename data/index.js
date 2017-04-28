@@ -1,8 +1,8 @@
 module.exports = {
-    "Combat":       require('./combat.js'),
-    "Explorer":     require('./explorer.js'),
-    "Freighter":    require('./freighter.js'),
-    "Mining":       require('./mining.js'),
-    "Multipurpose": require('./multipurpose.js'),
-    "Passenger":    require('./passenger.js'),
+    "Combat":               require('./combat.js'),
+    "Combat Explorer":      require('./explorer.js'),
+    "Combat Freighter":     require('./combat-freighter.js'),
+    "Freighter":            require('./freighter.js'),
+    "Multipurpose":         require('./multipurpose.js'),
+    "Passenger":            require('./passenger.js'),
 }

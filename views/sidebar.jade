@@ -23,9 +23,6 @@
                 td Cost
                 td=ship.retailCost + " CR"
             tr
-                td Insurance
-                td=ship.insurance + " CR"
-            tr
                 td Pad size
                 td
                     if (ship.properties.class == 1)
@@ -58,6 +55,11 @@
             tr
                 td Utility mounts
                 td=ship.hardpoints.utility
+
+            if ship.properties.crew
+                tr
+                    td Crew
+                    td=ship.properties.crew
     .column
         h2 
             i.fa.fa-wrench
@@ -71,23 +73,22 @@
                 td Boost speed
                 td=ship.properties.boost + " M/S"
             tr
-                td Manoeuvrability
-                td=ship.properties.agility + "/10"
-            tr
                 td Shields
                 td=ship.properties.baseShieldStrength + " MJ"
             tr
-                td Armour
-                td=ship.properties.baseArmour
+                td Mass lock
+                td=ship.properties.masslock
             tr
                 td Hull mass
                 td=ship.properties.hullMass + " T"
             tr
                 td Cargo
                 td=ship.properties.cargo + " T"
-            tr
-                td Fuel
-                td=ship.properties.fuel + " T"
+
+            if ship.properties.fighterHangars
+                tr
+                    td Fighter Hangars
+                    td Yes
 
     .column
         h2 

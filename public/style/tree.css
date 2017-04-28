@@ -221,9 +221,9 @@ h1, h2, h3 {
     content: ' ';
     position: absolute;
     display: block;
-    height: 130%;
+    height: 160%;
     left: 50%;
-    top: -20%;
+    top: -28.5%;
     border-left: 2px solid #FF7000;
 }
 

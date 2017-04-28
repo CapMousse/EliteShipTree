@@ -1,8 +1,10 @@
 module.exports = [
     ["adder"],
     ["cobra_mk_iii", "cobra_mk_iv"],
-    ["asp_scout", "asp"],
+    ["imperial_courier"],
+    ["asp"],
+    ["federal_dropship"],
     ["imperial_clipper"],
     ["python"],
-    ["anaconda"],
+    ["anaconda", "imperial_cutter"],
 ];
