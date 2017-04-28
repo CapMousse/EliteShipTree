@@ -101,9 +101,11 @@ Modules.prototype.getName = function (index) {
         ws:     "Frame Shift Wake Scanner",
         kw:     "Kill Warrant Scanner",
         sb:     "Shield Booster",
+        pci:    "Business Passenger Cabin",
+        pce:    "Economy Passenger Cabin"
     }
-
-    this[index].moduleName = names[this.name];
+    
+    this[index].moduleName = names[this.name] || this.name;
     this.getInfos(index);
 
     return this[index];

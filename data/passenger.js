@@ -1,3 +1,5 @@
 module.exports = [
-    ["orca"]
+    ["dolphin"],
+    ["orca"],
+    ["beluga"]
 ];

@@ -105,7 +105,7 @@ Ship.prototype.getStandard = function () {
     this.standard = [{
         class: this.slots.standard[0],
         module: powerPlants,
-        infos: "Efficiency: " + powerPlants.eff + " Power: " + powerPlants.pGen + "MW",
+        infos: "Efficiency: " + powerPlants.eff + " Power: " + powerPlants.pgen + "MW",
     },{
         class: this.slots.standard[1],
         module: thrusters,
@@ -121,9 +121,9 @@ Ship.prototype.getStandard = function () {
     },{
         class: this.slots.standard[4],
         module: powerDistributor,
-        infos: "WEP: " + powerDistributor.weaponcapacity + "<small>MJ</small> / " + powerDistributor.weaponrecharge + " <small>MW</small>"
-            + "<br>SYS: " + powerDistributor.systemcapacity + "<small>MJ</small> / " + powerDistributor.systemrecharge + " <small>MW</small>"
-            + "<br>ENG: " + powerDistributor.enginecapacity + "<small>MJ</small> / " + powerDistributor.enginerecharge + " <small>MW</small>",
+        infos: "WEP: " + powerDistributor.wepcap + "<small>MJ</small> / " + powerDistributor.weprate + "<small>MW</small>"
+            + "<br>SYS: " + powerDistributor.syscap + "<small>MJ</small> / " + powerDistributor.sysrate + "<small>MW</small>"
+            + "<br>ENG: " + powerDistributor.engcap + "<small>MJ</small> / " + powerDistributor.engrate + "<small>MW</small>",
     },{
         class: this.slots.standard[5],
         module: sensors,

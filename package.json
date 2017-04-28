@@ -8,7 +8,7 @@
   "author": "capitaine.mousse@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "coriolis-data": "git+https://github.com/cmmcleod/coriolis-data.git",
+    "coriolis-data": "git+https://github.com/EDCD/coriolis-data.git",
     "express": "^4.13.4",
     "jade": "^1.11.0",
     "node-cache": "^3.1.0",

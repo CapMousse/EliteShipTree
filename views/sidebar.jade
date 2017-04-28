@@ -113,7 +113,7 @@
 
         each i in ship.internals
             .slot
-                .class=i.class + " "
+                .class=(i.class.class || i.class) + " "
                 .module
                     if i.module
                         =i.module.class + i.module.rating + " "
